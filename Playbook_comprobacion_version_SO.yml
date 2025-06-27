@@ -1,0 +1,12 @@
+---
+- name: Verificar la versión del sistema operativo
+  hosts: all
+  become: yes
+  tasks:
+    - name: Obtener la versión del sistema operativo
+      command: cat /etc/os-release
+      register: os_version
+
+    - name: Mostrar la versión del sistema operativo
+      debug:
+        var: os_version.stdout_lines
