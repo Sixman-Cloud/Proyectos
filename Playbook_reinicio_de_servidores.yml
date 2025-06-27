@@ -1,0 +1,9 @@
+---
+- name: Reiniciar el sistema operativo.
+  hosts: all
+  become: yes
+  tasks:
+    - name: Reiniciar el sistema operativo
+      ansible.builtin.reboot:
+        reboot_timeout: 600
+
